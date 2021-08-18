@@ -28,6 +28,32 @@ impl fmt::Display for Color {
     }
 }
 
+#[derive(Debug)]
+struct List(Vec<i32>);
+
+impl fmt::Display for List {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        // Extract the value using tuple indexing, and create a reference to `vec`.
+        let vec = &self.0;
+
+        // Try `write!` to see if it errors. If it errors, return
+        // the error. Otherwise continue.
+        write!(f, "[")?;
+
+        // Iterate over `v` in `vec` while enumerating the iteration
+        // count in `count`.
+        for (count, v) in vec.iter().enumerate() {
+            write!(f, "{}: {}", count, v)?;
+
+            if count != vec.len() - 1 {
+                write!(f, ", ")?;
+            }
+        }
+
+        write!(f, "]")
+    }
+}
+
 pub fn display() {
     let str = Structure(23);
     println!("{}", str);
@@ -40,4 +66,7 @@ pub fn display() {
 
     println!("Debug: {:?}", color);
     println!("Display: {:}", color);
+
+    let v = List(vec![100, 200, 300]);
+    println!("{}", v);
 }
