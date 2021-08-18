@@ -1,9 +1,10 @@
 // https://doc.rust-lang.org/stable/rust-by-example/index.html
 
-mod hello_world;
+mod custom_types;
 mod fmt;
+mod hello_world;
 mod primitives;
 
 fn main() {
-    primitives::tuples();
+    custom_types::structures::structures();
 }
