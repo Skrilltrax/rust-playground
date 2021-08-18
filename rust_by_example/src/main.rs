@@ -2,8 +2,8 @@
 
 mod hello_world;
 mod fmt;
+mod primitives;
 
 fn main() {
-    hello_world::hello();
-    fmt::display();
+    primitives::tuples();
 }
