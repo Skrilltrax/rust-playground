@@ -1,7 +1,8 @@
+#![allow(dead_code)]
+
 use std::fmt;
 use std::mem;
 
-#[allow(dead_code)]
 pub fn literals_operators() {
     // Integer addition
     println!("1 + 2 = {}", 1u32 + 2);
@@ -38,7 +39,6 @@ impl fmt::Display for Matrix {
 }
 
 // Tuples can be used as function arguments and as return values
-#[allow(dead_code)]
 fn reverse(pair: (i32, bool)) -> (bool, i32) {
     // `let` can be used to bind the members of a tuple to variables
     let (integer, boolean) = pair;
@@ -46,14 +46,12 @@ fn reverse(pair: (i32, bool)) -> (bool, i32) {
     (boolean, integer)
 }
 
-#[allow(dead_code)]
 fn transpose(matrix: Matrix) -> Matrix {
     let new_matrix = Matrix(matrix.0, matrix.2, matrix.1, matrix.3);
 
     return new_matrix;
 }
 
-#[allow(dead_code)]
 pub fn tuples() {
     let mat = Matrix(1.1, 1.2, 2.1, 2.2);
 
@@ -67,13 +65,11 @@ pub fn tuples() {
 }
 
 // This function borrows a slice
-#[allow(dead_code)]
 fn analyze_slice(slice: &[i32]) {
     println!("first element of the slice: {}", slice[0]);
     println!("the slice has {} elements", slice.len());
 }
 
-#[allow(dead_code)]
 pub fn arrays() {
     // Fixed-size array (type signature is superfluous)
     let xs: [i32; 5] = [1, 2, 3, 4, 5];

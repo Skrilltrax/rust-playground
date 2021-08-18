@@ -6,5 +6,5 @@ mod hello_world;
 mod primitives;
 
 fn main() {
-    custom_types::structures::structures();
+    custom_types::enums::use_mod::use_example();
 }

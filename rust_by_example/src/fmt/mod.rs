@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 use std::fmt;
 
 #[derive(Debug)]
@@ -54,7 +55,6 @@ impl fmt::Display for List {
     }
 }
 
-#[allow(dead_code)]
 pub fn display() {
     let str = Structure(23);
     println!("{}", str);
